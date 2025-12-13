@@ -1,0 +1,13 @@
+def xor_operation(n: int, start: int) -> int:
+    """
+    Construct array arr[i] = start + 2*i for i in [0..n-1], return XOR of all elements.
+    Example: n=5, start=0 -> arr=[0,2,4,6,8] -> xor = 8
+    """
+    result = 0
+    for i in range(n):
+        result ^= (start + 2 * i)
+    return result
+
+# Example
+print(xor_operation(5, 0))  # Output: 8
+print(xor_operation(4, 3))  # arr=[3,5,7,9] -> xor= (3^5^7^9) -> prints result
