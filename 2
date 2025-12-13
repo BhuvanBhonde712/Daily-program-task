@@ -1,0 +1,14 @@
+def find_numbers_with_even_digits(nums):
+    """
+    Return count of numbers in nums that have even number of digits.
+    Example: [12,345,2,6,7896] -> 2 (12 and 7896)
+    """
+    count = 0
+    for x in nums:
+        # convert to string to count digits (works for non-negative ints)
+        if len(str(abs(x))) % 2 == 0:
+            count += 1
+    return count
+
+# Example
+print(find_numbers_with_even_digits([12, 345, 2, 6, 7896]))  # Output: 2
