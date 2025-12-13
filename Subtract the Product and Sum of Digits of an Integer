@@ -1,0 +1,19 @@
+def subtract_product_and_sum(n: int) -> int:
+    """
+    Return product of digits minus sum of digits.
+    Example: n=234 -> (2*3*4) - (2+3+4) = 24 - 9 = 15
+    """
+    prod = 1
+    summ = 0
+    x = abs(n)
+    if x == 0:
+        return 0 - 0  # product 0, sum 0
+    while x > 0:
+        d = x % 10
+        prod *= d
+        summ += d
+        x //= 10
+    return prod - summ
+
+# Example
+print(subtract_product_and_sum(4421)) 
