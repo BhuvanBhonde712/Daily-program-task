@@ -1,0 +1,17 @@
+def smaller_numbers_than_current(nums):
+    """
+    For each element find how many numbers are smaller than it.
+    Efficient: sort unique values, map value -> count of numbers smaller.
+    """
+    # sorted list of nums
+    sorted_nums = sorted(nums)
+    # map value -> first index in sorted order (count of smaller)
+    first_index = {}
+    for i, val in enumerate(sorted_nums):
+        if val not in first_index:
+            first_index[val] = i
+    # map each original number to its count
+    return [first_index[x] for x in nums]
+
+# Example
+print(smaller_numbers_than_current([8,1,2,2,3])) 
