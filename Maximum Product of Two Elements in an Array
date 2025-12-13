@@ -1,0 +1,6 @@
+def max_product(nums):
+    nums.sort()
+    return (nums[-1] - 1) * (nums[-2] - 1)
+
+# Example
+print(max_product([3, 4, 5, 2]))  # Output: 12
