@@ -1,0 +1,15 @@
+def num_good_pairs_bruteforce(nums):
+    """
+    Count pairs (i, j) with i < j and nums[i] == nums[j]
+    using a brute-force approach.
+    """
+    count = 0
+    n = len(nums)
+    for i in range(n):
+        for j in range(i + 1, n): # Start j from i+1 to ensure i < j
+            if nums[i] == nums[j]:
+                count += 1
+    return count
+
+# Example
+print(num_good_pairs_bruteforce([1,2,3,1,1,3]))
